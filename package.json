@@ -8,8 +8,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/newbot.js",
-    "dev": "nodemon ./src/newbot.js",
+    "start": "node ./src/bot.js",
+    "dev": "nodemon ./src/bot.js",
     "lint": "eslint ./"
   },
   "keywords": [],
