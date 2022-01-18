@@ -1,11 +1,11 @@
 require('dotenv').config();
-
 const { Client, Intents } = require('discord.js');
+
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 const PREFIX = '$';
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}`)
-})
+  console.log(`Logged in as ${client.user.tag}`);
+});
 
 // For Heroku, use settings > config vars
 client.login(process.env.DISCORDJS_BOT_TOKEN);
@@ -20,7 +20,7 @@ client.on('messageCreate', (message) => {
       .substring(PREFIX.length)
       .split(/\s+/);
     console.log(CMD_NAME);
-    console.log(args)
+    console.log(args);
 
     switch (CMD_NAME) {
       case 'cat':
@@ -28,6 +28,8 @@ client.on('messageCreate', (message) => {
         break;
       case 'ding':
         message.channel.send('Dong <:GachiGASM:375607923126173698>');
+        break;
+      default:
         break;
     }
   }
