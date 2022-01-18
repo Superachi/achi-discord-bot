@@ -20,10 +20,15 @@ client.on('messageCreate', (message) => {
     console.log(CMD_NAME);
     console.log(args)
 
-    if (CMD_NAME === 'ding') {
-      message.channel.send('Dong :gachiGASM:')
+    switch (CMD_NAME) {
+      case 'cat':
+        message.channel.send('https://cataas.com/cat/says/hello%20world!');
+        break;
+      case 'ding':
+        message.channel.send('Dong <:GachiGASM:375607923126173698>');
+        break;
     }
   }
-})
+});
 
 client.login(process.env.DISCORDJS_BOT_TOKEN);
