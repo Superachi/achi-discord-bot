@@ -7,6 +7,9 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}`)
 })
 
+// For Heroku, use settings > config vars
+client.login(process.env.DISCORDJS_BOT_TOKEN);
+
 // Listen for messages and react
 client.on('messageCreate', (message) => {
   if (message.author.bot) return;
@@ -29,6 +32,3 @@ client.on('messageCreate', (message) => {
     }
   }
 });
-
-// For Heroku, use settings > config vars
-client.login(process.env.DISCORDJS_BOT_TOKEN);

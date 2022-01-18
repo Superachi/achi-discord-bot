@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "echo \"BOOT UP!!\" && node ./src/bot.js",
-    "dev": "nodemon ./src/bot.js"
+    "start": "node ./src/newbot.js",
+    "dev": "nodemon ./src/newbot.js"
   },
   "keywords": [],
   "author": "",
