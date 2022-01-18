@@ -30,4 +30,5 @@ client.on('messageCreate', (message) => {
   }
 });
 
+// For Heroku, use settings > config vars
 client.login(process.env.DISCORDJS_BOT_TOKEN);
