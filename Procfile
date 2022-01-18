@@ -1,1 +1,1 @@
-worker: ./src/newbot.js
+worker: npm start
