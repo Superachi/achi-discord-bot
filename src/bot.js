@@ -7,7 +7,6 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}`)
 })
 
-// Continue tutorial... https://youtu.be/BmKXBVdEV0g?t=2256
 // Listen for messages and react
 client.on('messageCreate', (message) => {
   if (message.author.bot) return;
