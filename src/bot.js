@@ -1,9 +1,8 @@
 require('dotenv').config();
 const { Client, Intents } = require('discord.js');
-const catAPI = require('./cat-api');
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
-const PREFIX = '$';
+const PREFIX = '/';
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}`);
 });
@@ -24,9 +23,6 @@ client.on('messageCreate', (message) => {
     console.log(args);
 
     switch (CMD_NAME) {
-      case 'cat':
-        message.channel.send(catAPI.getCatImage());
-        break;
       case 'ding':
         message.channel.send('Dong <:GachiGASM:375607923126173698>');
         break;
