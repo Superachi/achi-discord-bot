@@ -11,7 +11,8 @@
         "ecmaVersion": "latest"
     },
     "rules": {
-        "no-console": "off"
+        "no-console": "off",
+        "arrow-parens": ["error", "as-needed"]
     }
     
 }
