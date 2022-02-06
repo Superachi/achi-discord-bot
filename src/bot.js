@@ -1,14 +1,9 @@
 require('dotenv').config();
 const { Client, Intents } = require('discord.js');
 
-const client = new Client(
-  {
-    intents: [
-      Intents.FLAGS.GUILDS,
-      Intents.FLAGS.GUILD_MESSAGES,
-    ],
-  },
-);
+const client = new Client({
+  intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
+});
 
 const PREFIX = '/';
 client.on('ready', () => {
@@ -25,16 +20,19 @@ const calc = (numA, operator, numB) => {
 
   switch (operator) {
     case '+':
-      console.log(a + b);
-      sum = a + b; break;
+      sum = a + b;
+      break;
     case '-':
-      sum = a - b; break;
+      sum = a - b;
+      break;
     case '/':
-      sum = a / b; break;
+      sum = a / b;
+      break;
     case '*':
-      sum = a * b; break;
+      sum = a * b;
+      break;
     default:
-      return "Error: sorry I can't work with that input";
+      return "I can't work with that input.";
   }
 
   if (Number.isNaN(sum)) {
@@ -49,7 +47,9 @@ client.on('messageCreate', message => {
   if (message.author.bot) return;
 
   if (message.content.includes('ikaruga')) {
-    message.channel.send('NOT A SINGLE DAY PASSES WITHOUT YOU TALKING ABOUT THAT 2D WOMAN');
+    message.channel.send(
+      'NOT A SINGLE DAY PASSES WITHOUT YOU TALKING ABOUT THAT 2D WOMAN'
+    );
     return;
   }
 
