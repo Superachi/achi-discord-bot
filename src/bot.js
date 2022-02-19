@@ -46,14 +46,16 @@ const calc = (numA, operator, numB) => {
 client.on('messageCreate', message => {
   if (message.author.bot) return;
 
-  if (message.content.includes('ikaruga')) {
+  const MessageContent = message.content.toLowerCase();
+
+  if (MessageContent.includes('ikaruga')) {
     message.channel.send(
       'NOT A SINGLE DAY PASSES WITHOUT YOU TALKING ABOUT THAT 2D WOMAN'
     );
     return;
   }
 
-  if (message.content.startsWith(PREFIX)) {
+  if (MessageContent.startsWith(PREFIX)) {
     const [CMD_NAME, ...args] = message.content
       .trim()
       .substring(PREFIX.length)
