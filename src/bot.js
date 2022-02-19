@@ -49,13 +49,6 @@ client.on('messageCreate', message => {
 
   const MessageContent = message.content.toLowerCase();
 
-  if (MessageContent.includes('ikaruga')) {
-    message.channel.send(
-      'NOT A SINGLE DAY PASSES WITHOUT YOU TALKING ABOUT THAT 2D WOMAN'
-    );
-    return;
-  }
-
   if (MessageContent.startsWith(PREFIX)) {
     const [CMD_NAME, ...args] = message.content
       .trim()
