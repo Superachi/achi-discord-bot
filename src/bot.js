@@ -58,8 +58,8 @@ client.on('messageCreate', message => {
     console.log(args);
 
     switch (CMD_NAME) {
-      case 'ding':
-        message.channel.send('Dong <:GachiGASM:375607923126173698>');
+      case 'joshua':
+        message.channel.send('Make it nice!');
         break;
       case 'math':
         message.channel.send(calc(args[0], args[1], args[2]).toString());
