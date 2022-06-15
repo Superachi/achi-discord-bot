@@ -53,7 +53,6 @@ const joshuaSays = () => {
     "BOTNET",
     "We zitten achter de prullenbak.",
     "Vraag het!",
-    "https://www.youtube.com/watch?v=KjH5AYTiYkQ",
     ":flushed:",
     "WAARSCHUWING",
     "waar is mastop",
@@ -62,7 +61,15 @@ const joshuaSays = () => {
     "WE MOETEN PITCHEN",
     "Ben jij ook enthoujazzed?",
     "Dirty Cow!",
-    "Ik kom uit grëüningen."
+    "Ik kom uit grëüningen.",
+    "Laat me even uitzieken.",
+    "We gebruiken elementen van scrum.",
+    "No spammerino in the chatterino!",
+    "Ik wil de walkthrough maken :smile:",
+    "We hebben al gereserveerd bij La Cubanita!",
+    "SPEEDRUN!!",
+    "JOKIE JOKIE",
+    "#mail-check gogogo!!"
   ]
   
   const random_number = Math.floor(Math.random() * (quoteArray.length - 1));
