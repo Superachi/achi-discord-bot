@@ -72,7 +72,7 @@ const joshuaSays = () => {
     "#mail-check gogogo!!"
   ]
   
-  const random_number = Math.floor(Math.random() * (quoteArray.length - 1));
+  const random_number = Math.floor(Math.random() * quoteArray.length);
   let message = quoteArray[random_number];
   return message;
 }
