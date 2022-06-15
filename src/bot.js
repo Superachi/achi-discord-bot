@@ -43,6 +43,54 @@ const calc = (numA, operator, numB) => {
   return sum;
 };
 
+const joshuaSays = () => {
+  let message = "";
+  const random_number = Math.floor(Math.random() * 11);
+  switch (random_number) {
+    case 1:
+      message = "Make it nice.";
+      break;
+    case 2:
+      message = "Spicy.";
+      break;
+    case 3:
+      message = "Oh nee, jazzeurysm!!";
+      break;
+    case 4:
+      message = "JAZZER GAMING";
+      break;
+    case 5:
+      message = "GEBRUIK ASSEMBLY! :pog:";
+      break;
+    case 6:
+      message = "BOTNET :epic:";
+      break;
+    case 7:
+      message = "We zitten achter de prullenbak";
+      break;
+    case 8:
+      message = "Vraag het!";
+      break;
+    case 9:
+      message = ":sadcat:";
+      break;
+    case 10:
+      message = ":flushed:";
+      break;
+    case 11:
+      message = "JA";
+      break;
+    case 12:
+      message = ":cucumber:";
+      break;
+    default:
+      message = "Oops, couldn't pick a quote.";
+      break;
+  }
+
+  return message;
+}
+
 // Listen for messages and react
 client.on('messageCreate', message => {
   if (message.author.bot) return;
@@ -58,11 +106,14 @@ client.on('messageCreate', message => {
     console.log(args);
 
     switch (CMD_NAME) {
-      case 'joshua':
-        message.channel.send('Make it nice!');
+      case 'ding':
+        message.channel.send('Dong <:GachiGASM:375607923126173698>');
         break;
       case 'math':
         message.channel.send(calc(args[0], args[1], args[2]).toString());
+        break;
+      case 'joshua':
+        message.channel.send(joshuaSays());
         break;
       default:
         break;
