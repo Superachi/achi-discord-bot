@@ -44,50 +44,29 @@ const calc = (numA, operator, numB) => {
 };
 
 const joshuaSays = () => {
-  let message = "";
-  const random_number = Math.floor(Math.random() * 11);
-  switch (random_number) {
-    case 1:
-      message = "Make it nice.";
-      break;
-    case 2:
-      message = "Spicy.";
-      break;
-    case 3:
-      message = "Oh nee, jazzeurysm!!";
-      break;
-    case 4:
-      message = "JAZZER GAMING";
-      break;
-    case 5:
-      message = "GEBRUIK ASSEMBLY! :pog:";
-      break;
-    case 6:
-      message = "BOTNET :epic:";
-      break;
-    case 7:
-      message = "We zitten achter de prullenbak";
-      break;
-    case 8:
-      message = "Vraag het!";
-      break;
-    case 9:
-      message = ":sadcat:";
-      break;
-    case 10:
-      message = ":flushed:";
-      break;
-    case 11:
-      message = "JA";
-      break;
-    case 12:
-      message = ":cucumber:";
-      break;
-    default:
-      message = "Oops, couldn't pick a quote.";
-      break;
-  }
-
+  const quoteArray = [
+    "Make it nice.",
+    "Spicy.",
+    "Oh nee, jazzeurysm!!",
+    "JAZZER GAMING",
+    "GEBRUIK ASSEMBLY!",
+    "BOTNET",
+    "We zitten achter de prullenbak.",
+    "Vraag het!",
+    "https://www.youtube.com/watch?v=KjH5AYTiYkQ",
+    ":flushed:",
+    "WAARSCHUWING",
+    "waar is mastop",
+    "JA",
+    ":cucumber:",
+    "WE MOETEN PITCHEN",
+    "Ben jij ook enthoujazzed?",
+    "Dirty Cow!",
+    "Ik kom uit grëüningen."
+  ]
+  
+  const random_number = Math.floor(Math.random() * (quoteArray.length - 1));
+  let message = quoteArray[random_number];
   return message;
 }
 
