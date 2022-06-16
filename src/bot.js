@@ -45,7 +45,7 @@ const calc = (numA, operator, numB) => {
 
 const joshuaSays = () => {
   const quoteArray = [
-    "Make it nice.",
+    "Make it nice!",
     "Spicy.",
     "Oh nee, jazzeurysm!!",
     "JAZZER GAMING",
@@ -69,7 +69,23 @@ const joshuaSays = () => {
     "We hebben al gereserveerd bij La Cubanita!",
     "SPEEDRUN!!",
     "JOKIE JOKIE",
-    "#mail-check gogogo!!"
+    "#mail-check gogogo!!",
+    "@pascal HELP met software pls",
+    "Oh, ben ik aan de beurt?",
+    "Wie is aan de beurt?",
+    "nee",
+    "Sorry, ik kan niet antwoorden. Ik zit in de rowing pit!!",
+    "*Legt een kaart neer, ook al is het niet zijn beurt*",
+    "Dat is pimping zoals Erwin zou zeggen",
+    "Teken Fiora!",
+    "Ik wil geen Roy zijn",
+    "We zitten nu helemaal achteraan in de bus. Waar alleen de coole kinderen mogen zitten.",
+    "Shrekmate!",
+    "Doe een keer mee met de CTF challenge!",
+    "Capture the Shrek!",
+    "Dat is een goede CTF team naam.",
+    "DOE HET",
+    "Ohhhnonono :joy:"
   ]
   
   const random_number = Math.floor(Math.random() * quoteArray.length);
