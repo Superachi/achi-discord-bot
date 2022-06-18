@@ -93,6 +93,58 @@ const joshuaSays = () => {
   return message;
 }
 
+// Rock, paper, scissors
+const rpsGame = (input) => {
+  const message_result_wins = "I CAN'T BELIEVE I LOST!!";
+  const message_result_loses = "I win.";
+
+  const item = input.toLowerCase();
+  const item_array = [
+    "rock",
+    "paper",
+    "scissors"
+  ]
+
+  if (!item_array.includes(item)) {
+    return "Sorry, but you need to enter either 'rock', 'paper' or 'scissors'.";
+  }
+
+  const random_number = Math.floor(Math.random() * 3);
+  const item_computer = item_array[random_number];
+
+  if (item == item_computer) {
+    return "Great minds think alike.";
+  }
+
+  let message = "";
+
+  switch (item) {
+    case "rock":
+      if (item_computer == "paper") {
+        message = message_result_loses;
+      } else if (item_computer == "scissors") {
+        message = message_result_wins;
+      }
+      break;
+    case "paper":
+      if (item_computer == "scissors") {
+        message = message_result_loses;
+      } else if (item_computer == "rock") {
+        message = message_result_wins;
+      }
+      break;
+    case "scissors":
+      if (item_computer == "rock") {
+        message = message_result_loses;
+      } else if (item_computer == "paper") {
+        message = message_result_wins;
+      }
+      break;
+  }
+
+  return message;
+}
+
 // Listen for messages and react
 client.on('messageCreate', message => {
   if (message.author.bot) return;
@@ -116,6 +168,9 @@ client.on('messageCreate', message => {
         break;
       case 'joshua':
         message.channel.send(joshuaSays());
+        break;
+      case 'rps':
+        message.channel.send(rpsGame(args[0]));
         break;
       default:
         break;
