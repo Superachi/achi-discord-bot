@@ -94,7 +94,7 @@ const joshuaSays = () => {
 }
 
 // Rock, paper, scissors
-const rpsGame = (input) => {
+const rpsGame = (user_message, input) => {
   const message_result_wins = "I CAN'T BELIEVE I LOST!!";
   const message_result_loses = "I win.";
 
@@ -111,6 +111,7 @@ const rpsGame = (input) => {
 
   const random_number = Math.floor(Math.random() * 3);
   const item_computer = item_array[random_number];
+  user_message.channel.send("I choose " + item_computer + "!");
 
   if (item == item_computer) {
     return "Great minds think alike.";
@@ -170,7 +171,7 @@ client.on('messageCreate', message => {
         message.channel.send(joshuaSays());
         break;
       case 'rps':
-        message.channel.send(rpsGame(args[0]));
+        message.channel.send(rpsGame(message, args[0]));
         break;
       default:
         break;
