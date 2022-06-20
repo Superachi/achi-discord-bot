@@ -1,6 +1,7 @@
 // Init
 require('dotenv').config();
 const { Client, Intents } = require('discord.js');
+const moduleSpeech = require('./module-speech')
 
 const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
@@ -43,77 +44,27 @@ const calc = (numA, operator, numB) => {
   return sum;
 };
 
-const joshuaSays = () => {
-  const quoteArray = [
-    "Make it nice!",
-    "Spicy.",
-    "Oh nee, jazzeurysm!!",
-    "JAZZER GAMING",
-    "GEBRUIK ASSEMBLY!",
-    "BOTNET",
-    "We zitten achter de prullenbak.",
-    "Vraag het!",
-    ":flushed:",
-    "WAARSCHUWING",
-    "waar is mastop",
-    "JA",
-    ":cucumber:",
-    "WE MOETEN PITCHEN",
-    "Ben jij ook enthoujazzed?",
-    "Dirty Cow!",
-    "Ik kom uit grëüningen.",
-    "Laat me even uitzieken.",
-    "We gebruiken elementen van scrum.",
-    "No spammerino in the chatterino!",
-    "Ik wil de walkthrough maken :smile:",
-    "We hebben al gereserveerd bij La Cubanita!",
-    "SPEEDRUN!!",
-    "JOKIE JOKIE",
-    "#mail-check gogogo!!",
-    "@pascal HELP met software pls",
-    "Oh, ben ik aan de beurt?",
-    "Wie is aan de beurt?",
-    "nee",
-    "Sorry, ik kan niet antwoorden. Ik zit in de rowing pit!!",
-    "*Legt een kaart neer, ook al is het niet zijn beurt*",
-    "Dat is pimping zoals Erwin zou zeggen",
-    "Teken Fiora!",
-    "Ik wil geen Roy zijn",
-    "We zitten nu helemaal achteraan in de bus. Waar alleen de coole kinderen mogen zitten.",
-    "Shrekmate!",
-    "Doe een keer mee met de CTF challenge!",
-    "Capture the Shrek!",
-    "Dat is een goede CTF team naam.",
-    "DOE HET",
-    "Ohhhnonono :joy:"
-  ]
-  
-  const random_number = Math.floor(Math.random() * quoteArray.length);
-  let message = quoteArray[random_number];
-  return message;
-}
-
 // Rock, paper, scissors
-const rpsGame = (user_message, input) => {
-  const message_result_wins = "I CAN'T BELIEVE I LOST!!";
-  const message_result_loses = "I win.";
+const rpsGame = (userMessage, input) => {
+  const messageResultWins = "I CAN'T BELIEVE I LOST!!";
+  const messageResultLoss = "I win.";
 
   const item = input.toLowerCase();
-  const item_array = [
+  const itemArray = [
     "rock",
     "paper",
     "scissors"
   ]
 
-  if (!item_array.includes(item)) {
+  if (!itemArray.includes(item)) {
     return "Sorry, but you need to enter either 'rock', 'paper' or 'scissors'.";
   }
 
-  const random_number = Math.floor(Math.random() * 3);
-  const item_computer = item_array[random_number];
-  user_message.channel.send("I choose " + item_computer + "!");
+  const randomNumber = Math.floor(Math.random() * 3);
+  const itemComputer = itemArray[randomNumber];
+  userMessage.channel.send(`I choose ${itemComputer}!`);
 
-  if (item == item_computer) {
+  if (item === itemComputer) {
     return "Great minds think alike.";
   }
 
@@ -121,25 +72,28 @@ const rpsGame = (user_message, input) => {
 
   switch (item) {
     case "rock":
-      if (item_computer == "paper") {
-        message = message_result_loses;
-      } else if (item_computer == "scissors") {
-        message = message_result_wins;
+      if (itemComputer === "paper") {
+        message = messageResultLoss;
+      } else if (itemComputer === "scissors") {
+        message = messageResultWins;
       }
       break;
     case "paper":
-      if (item_computer == "scissors") {
-        message = message_result_loses;
-      } else if (item_computer == "rock") {
-        message = message_result_wins;
+      if (itemComputer === "scissors") {
+        message = messageResultLoss;
+      } else if (itemComputer === "rock") {
+        message = messageResultWins;
       }
       break;
     case "scissors":
-      if (item_computer == "rock") {
-        message = message_result_loses;
-      } else if (item_computer == "paper") {
-        message = message_result_wins;
+      if (itemComputer === "rock") {
+        message = messageResultLoss;
+      } else if (itemComputer === "paper") {
+        message = messageResultWins;
       }
+      break;
+    default:
+      message = "Oops, I don't know what to do here.";
       break;
   }
 
@@ -168,7 +122,20 @@ client.on('messageCreate', message => {
         message.channel.send(calc(args[0], args[1], args[2]).toString());
         break;
       case 'joshua':
-        message.channel.send(joshuaSays());
+        message.channel.send(moduleSpeech.joshuaSays());
+        break;
+      case 'eva':
+        message.channel.send(moduleSpeech.evaSays());
+        break;
+      case 'mastop':
+      case 'cheyenne':
+        message.channel.send(moduleSpeech.cheyenneSays());
+        break;
+      case 'talitha':
+        message.channel.send(moduleSpeech.talithaSays());
+        break;
+      case 'pascal':
+        message.channel.send(moduleSpeech.pascalSays());
         break;
       case 'rps':
         message.channel.send(rpsGame(message, args[0]));
