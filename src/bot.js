@@ -132,6 +132,7 @@ client.on('messageCreate', message => {
         message.channel.send(moduleSpeech.cheyenneSays());
         break;
       case 'talitha':
+      case 'taat':
         message.channel.send(moduleSpeech.talithaSays());
         break;
       case 'pascal':
